@@ -1,0 +1,30 @@
+A arquitetura apresentada possui um conflito fundamental com o modelo de distribuição da CrazyGames. Os arquivos `server.js` e `package.json` estruturam um servidor Node.js com Express para hospedar e servir o jogo. A plataforma CrazyGames não executa servidores Node.js nativamente para os desenvolvedores; eles exigem o upload de um pacote `.zip` estático onde o arquivo `index.html` deve estar obrigatoriamente na raiz do arquivo compactado, acompanhado de seus assets locais.
+
+**Questão de Arquitetura:** Qual é o objetivo de ter construído esse backend em Express? Se a intenção é apenas testar o jogo localmente na sua máquina, este servidor não deverá ser enviado para a CrazyGames. Caso o planejamento envolva expandir o "Modo Batalha" para um multiplayer online real no futuro (usando WebSockets, por exemplo), você será obrigado a hospedar esse backend externamente (em serviços como AWS, Render ou Railway) e configurar o cliente no HTML para se conectar a essa API remota de forma segura (WSS). Qual abordagem você prefere seguir para o backend?
+
+Analisando a estrutura do arquivo principal do jogo (`index.html`) frente às exigências técnicas da documentação:
+
+* **Implementação do SDK e Salvamento:** O script do SDK v3 está importado corretamente e inicializado no carregamento da página. A utilização de `cgSdk.data.getItem` e `cgSdk.data.setItem` para salvar as cores e fases em nuvem (Cloud Save) está bem estruturada. O CSS também está travando a proporção corretamente para iframes (`100vw`, `100vh`, `overflow: hidden`).
+
+
+* **Falta de Monetização (Ads):** A ausência mais crítica no código atual é a total falta de chamadas de anúncios. Para que o jogo seja rentável e tenha uma boa recepção na plataforma, o uso do SDK de anúncios é praticamente um requisito de negócio.
+
+
+
+**Decisões sobre Monetização:** Como você estruturaria a exibição de anúncios neste fluxo? Temos duas opções principais recomendadas pela documentação da plataforma:
+
+1. **Midgame Ads:** Exibir anúncios em pausas naturais. Uma opção lógica seria chamar um Midgame Ad na transição entre níveis na função `startNextLevel()` ou ao retornar aos menus com `returnToMainMenu()`.
+
+
+2. **Rewarded Ads (Premiados):** Você pode oferecer um botão no `pauseMenu` ou na tela de Game Over para que o jogador assista a um vídeo em troca de recuperar as vidas perdidas (na função `handleDeath`) ou para desbloquear slots extras no Criador de Mapas (`mapManagerScreen`). Quais dessas lógicas você deseja implementar primeiro?
+
+
+
+* **Gerenciamento de Sessão (Gameplay Start/Stop):** O código possui as funções `notifyGameStart()` e `notifyGameStop()` que invocam os métodos do SDK. O evento de "start" é chamado nos *listeners* de touch e teclado quando o jogador tira o jogo da espera. O "stop" é chamado no `cleanupGame()` e no `endBattle()`. Contudo, ao ocorrer a morte completa do jogador na função `handleDeath()` onde o `alertBox` de "GAME OVER" é exibido, o `notifyGameStop()` não é acionado imediatamente. Para métricas precisas da plataforma, o tempo em menus de game over não deve contar como gameplay ativo.
+
+
+* **Dependências Externas (CDNs):** O projeto faz uso de CDNs para carregar Tailwind, Three.js e Tone.js. A CrazyGames adverte na documentação (Guia "Getting to the First Frame") sobre o risco de falhas de carregamento rápido ou bloqueios de CORS devido a CDNs de terceiros, o que pode resultar na rejeição do jogo no controle de qualidade.
+
+
+
+**Decisão sobre Assets:** Você prefere manter a dependência das CDNs para diminuir o tamanho final do arquivo `.zip` ou deseja fazer o download dessas bibliotecas e referenciá-las localmente no diretório do projeto, garantindo estabilidade offline e um tempo de primeiro quadro (First Frame) mais rápido?

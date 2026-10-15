@@ -1,0 +1,37 @@
+Termos de Uso e Licença de Usuário Final (EULA)
+Jogo: Snatrix
+
+Última atualização: [Data de Hoje]
+
+Ao acessar e jogar Snake Ultimate ("o Jogo"), você concorda integralmente com os termos e condições descritos abaixo. Se você não concorda com estes termos, por favor, não acesse ou jogue o Jogo.
+
+1. Propriedade Intelectual
+Todo o conteúdo do Jogo, incluindo, mas não se limitando a: código-fonte (HTML, CSS, JavaScript, implementações Three.js e Tone.js), gráficos, mecânicas de jogo, design de níveis, áudio, música e interface, é de propriedade exclusiva de Alaskalx ("o Desenvolvedor") e está protegido por leis de direitos autorais e de propriedade intelectual internacionais.
+
+2. Licença de Uso do Jogador
+O Desenvolvedor concede a você uma licença limitada, pessoal, não exclusiva, não transferível e revogável para acessar e jogar o Jogo estritamente para fins de entretenimento pessoal e não comercial.
+
+3. Restrições de Distribuição e Monetização (Proibições)
+Para proteger a integridade do Jogo e o trabalho do Desenvolvedor, é terminantemente proibido:
+
+Distribuição Monetizada Não Autorizada: Hospedar, publicar, clonar ou incorporar (via iFrame ou qualquer outro método) o Jogo em sites de terceiros, aplicativos ou plataformas que gerem receita (através de anúncios, assinaturas, venda de dados ou microtransações) sem a permissão prévia, expressa e por escrito do Desenvolvedor.
+
+Uso Comercial: Vender, alugar, licenciar ou explorar comercialmente qualquer parte do Jogo.
+
+Modificação e Engenharia Reversa: Modificar, traduzir, descompilar, extrair ativos (áudio/vídeo), remover travas de segurança ou criar obras derivadas baseadas no Jogo.
+
+Remoção de Créditos: Ocultar ou remover marcas d'água, links oficiais ou a autoria do Desenvolvedor.
+
+O Jogo está atualmente licenciado e autorizado para ser hospedado e distribuído oficialmente na plataforma CrazyGames.
+
+4. Conteúdo Gerado pelo Usuário (Criador de Mapas)
+O Jogo possui uma ferramenta de "Criador de Mapas" que permite salvar criações no armazenamento local do seu navegador ou na nuvem da plataforma autorizada. O Desenvolvedor não se responsabiliza pela perda, corrupção ou indisponibilidade desses dados salvos.
+
+5. Isenção de Responsabilidade (As Is)
+O Jogo é fornecido "no estado em que se encontra" (As Is), sem garantias de qualquer tipo, expressas ou implícitas. O Desenvolvedor não garante que o Jogo estará livre de erros, bugs ou interrupções, e não se responsabiliza por quaisquer danos diretos ou indiretos decorrentes do uso ou da incapacidade de usar o Jogo.
+
+6. Violação de Direitos e DMCA
+O Desenvolvedor monitora ativamente a distribuição ilegal do Jogo. Hospedar este Jogo em plataformas não autorizadas com fins lucrativos constitui violação de direitos autorais e sujeitará o infrator a notificações de remoção (DMCA Takedown Notices) junto a provedores de hospedagem, redes de anúncios (como o Google AdSense) e provedores de domínio, além de possíveis medidas legais.
+
+7. Contato para Licenciamento
+Se você possui um portal de jogos ou plataforma e deseja licenciar, hospedar ou distribuir Snatrix legalmente, entre em contato através do e-mail: alcantaranonato.1@gmail.com
